@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 数据库连接 -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/db_database</property>
+		<!-- 数据库连接用户名 -->
+		<property name="connection.username">root</property>
+		<!-- 数据库连接密码 -->
+		<property name="connection.password"></property>
+		<!-- 连接数据库时是否使用Unicode编码 -->
+	    <property name="connection.useUnicode">true</property> 
+	    <!-- 连接数据库时数据的传输字符集编码方式 -->
+        <property name="connection.characterEncoding">UTF-8</property> 
+		<!-- 数据库驱动 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 打印SQL语句 -->
+		<property name="show_sql">true</property>
+		<!-- 自动建表 -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 映射文件 -->
+		<mapping resource="com/bmd/model/Message.hbm.xml"/>
+		<mapping resource="com/bmd/model/Revert.hbm.xml"/>
+		<mapping resource="com/bmd/model/User.hbm.xml"/>    
+    </session-factory>
+</hibernate-configuration>
